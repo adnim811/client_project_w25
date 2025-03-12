@@ -1,0 +1,213 @@
+/* ==========================
+   Global Styles & Reset
+   ========================== */
+   
+/* Import Reset Styles */
+@import url("html5reset.css");
+
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    color: #222;
+    background-color: #f4f4f4;
+}
+
+/* Ensure all content is centered and fluid */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==========================
+   Skip to Main Content Link
+   ========================== */
+   
+/* Hidden by default, shown when focused */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #ffcb05; /* U-M color */
+    color: #00274c;
+    padding: 10px;
+    z-index: 100;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+/* ==========================
+   Navigation
+   ========================== */
+
+nav {
+    background: #00274c; /* U-M Blue */
+    padding: 0.5rem;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column; /* Mobile-first: stacked nav */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav li {
+    margin: 0.5rem 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffcb05; /* U-M Maize */
+    font-size: 1.2rem;
+    padding: 10px;
+    display: block;
+}
+
+nav a:hover,
+nav a:focus {
+    background: #ffcb05;
+    color: #00274c;
+}
+
+/* Active Page Indicator */
+nav a.active {
+    border-bottom: 3px solid #ffcb05;
+}
+
+/* ==========================
+   Header
+   ========================== */
+
+header {
+    background: #ffcb05;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+header img {
+    max-width: 100px;
+}
+
+/* ==========================
+   Main Content
+   ========================== */
+
+main {
+    padding: 1rem;
+    background: white;
+}
+
+/* Use CSS Grid for layout */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Headings */
+h1 {
+    font-size: 1.8rem;
+    color: #00274c;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Buttons */
+button {
+    background: #00274c;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ffcb05;
+    color: #00274c;
+}
+
+/* ==========================
+   Footer
+   ========================== */
+
+footer {
+    background: #00274c;
+    color: #ffcb05;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+footer a {
+    color: #ffcb05;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* ==========================
+   Accessibility & Reduced Motion
+   ========================== */
+
+/* Ensure links and buttons are large enough */
+a, button {
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ==========================
+   Tablet & Desktop Styles (Enhancements)
+   ========================== */
+
+/* Larger screens: Adjust grid layout */
+@media (min-width: 768px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    nav li {
+        margin: 0 1rem;
+    }
+
+    .grid-layout {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-layout {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
