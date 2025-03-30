@@ -1,0 +1,254 @@
+@import url("html5reset.css");
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    color: #222;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #ffcb05;
+    color: #00274c;
+    padding: 10px;
+    z-index: 100;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+nav {
+    background: #00274c;
+    padding: 0.5rem;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav li {
+    margin: 0.5rem 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+    display: block;
+}
+
+nav a:hover,
+nav a:focus {
+    background: #ffcb05;
+    color: #00274c;
+}
+
+nav a.active {
+    border-bottom: 3px solid #ffcb05;
+}
+
+header {
+    background: #ffcb05;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+header img {
+    max-width: 100px;
+}
+
+main {
+    padding: 1rem;
+    background: white;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    color: #00274c;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+button {
+    background: #00274c;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ffcb05;
+    color: #00274c;
+}
+
+footer {
+    background: #00274c;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ffcb05;
+}
+
+a, button {
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+@media (min-width: 768px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    nav li {
+        margin: 0 1rem;
+    }
+
+    .grid-layout {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header img {
+        max-width: 150px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-layout {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    header h1 {
+        font-size: 2.4rem;
+    }
+
+    main {
+        padding: 2rem 4rem;
+    }
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f4f4f4;
+}
+
+body.dark-mode a {
+    color: white;
+}
+
+body.dark-mode header {
+    background-color: #333;
+}
+
+body.dark-mode nav {
+    background-color: #111;
+}
+
+body.dark-mode nav a {
+    color: white;
+}
+
+body.dark-mode nav a:hover,
+body.dark-mode nav a:focus {
+    background: #ffcb05;
+    color: #111;
+}
+
+body.dark-mode main {
+    background: #222;
+}
+
+body.dark-mode footer {
+    background-color: #111;
+    color: white;
+}
+
+body.dark-mode footer a {
+    color: white;
+}
+
+body.dark-mode footer a:hover {
+    color: #ffcb05;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: #f4f4f4;
+}
+
+.dark-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background: #00274c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.dark-toggle:hover {
+    background: #ffcb05;
+    color: #00274c;
+}

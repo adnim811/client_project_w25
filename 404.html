@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <a href="#main-content" class="skip-link">Skip to Main Content</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="food_pantry.html">Food Pantry</a></li>
+                <li><a href="firstgen.html">First-Generation Students</a></li>
+                <li><a href="caps.html">CAPS</a></li>
+            </ul>
+        </nav>
+        <h1>Oops! Page Not Found</h1>
+    </header>
+
+    <main id="main-content" class="container">
+        <section style="text-align:center; padding: 2rem;">
+            <h2>404 - This page doesn’t exist</h2>
+            <p>It looks like the page you're trying to reach isn’t here anymore.</p>
+            <p>Let’s get you back <a href="index.html">home</a>.</p>
+            <img src="images/UMSI_signature_vertical_informal_solidblue.jpg" alt="UMSI logo" style="margin-top:2rem; max-width:200px;">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> University of Michigan School of Information</p>
+    </footer>
+
+    <script>
+        const body = document.body;
+        const toggleButton = document.querySelector(".dark-toggle");
+        const yearSpan = document.getElementById("year");
+    
+        function updateButtonText() {
+            toggleButton.textContent = body.classList.contains("dark-mode")
+                ? "Toggle to Light Mode"
+                : "Toggle to Dark Mode";
+        }
+    
+        if (localStorage.getItem("darkMode") === "enabled") {
+            body.classList.add("dark-mode");
+        }
+    
+        updateButtonText();
+    
+        function toggleDarkMode() {
+            body.classList.toggle("dark-mode");
+            const mode = body.classList.contains("dark-mode") ? "enabled" : "disabled";
+            localStorage.setItem("darkMode", mode);
+            updateButtonText();
+        }
+    
+        yearSpan.textContent = new Date().getFullYear();
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First-Generation Students at U-M</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <a href="#main-content">Skip to Main Content</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="food_pantry.html">Food Pantry</a></li>
+                <li><a href="firstgen.html">First-Generation Students</a></li>
+                <li><a href="caps.html">CAPS</a></li>
+            </ul>
+        </nav>
+        <h1>First-Generation Students at U-M</h1>
+        <img src="images/firstgenpic.jpg" alt="First-Generation Students">
+        <button class="dark-toggle" onclick="toggleDarkMode()">Toggle to Dark Mode</button>
+
+    </header>
+
+    <main id="main-content">
+        <section>
+            <h2>Who is a First-Generation Student?</h2>
+            <p>At the University of Michigan, undergraduates and graduate students are considered first-generation college students if neither parent or guardian has completed a four-year college or university degree. This definition includes students with other family members (siblings, cousins, grandparents, etc.) who have completed a four-year degree.</p>
+            <img src="images/firstgenexampleSI339.jpg" alt="First-Generation Support Example">
+        </section>
+
+        <section>
+            <h2>First-Generation Support Resources</h2>
+            <article>
+                <h3>First-Generation Gateway</h3>
+                <p>The First-Generation Student Gateway serves as a starting point to get connected to resources for first-generation students. Located on the third floor of the Student Activities Building in the Office of Academic Multicultural Initiatives, the Gateway offers:</p>
+                <ul>
+                    <li>Information on resources for first-generation students</li>
+                    <li>Connections to partner offices that support first-generation students</li>
+                    <li>Meetings with the First-Generation Project Manager</li>
+                    <li>Study and meeting spaces</li>
+                </ul>
+                <p>For more information, visit the <a href="https://firstgen.umich.edu/gateway/">First-Generation Gateway</a>.</p>
+            </article>
+
+            <article>
+                <h3>Financial Support</h3>
+                <p>Various financial aid options are available to assist first-generation students, including:</p>
+                <ul>
+                    <li><strong>Kessler Scholarship:</strong> A scholarship specifically for incoming first-generation college students to cover tuition. Students must apply for this scholarship. For more details, visit the <a href="https://firstgen.umich.edu/paying-for-school/">Paying for School</a> page.</li>
+                    <li><strong>Emergency Funds:</strong> Student emergency funds are available for anyone on campus, with additional funds from individual schools and colleges. More information can be found on the <a href="https://firstgen.umich.edu/paying-for-school/">Student Emergency Fund</a> page.</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>Programs and Services</h3>
+                <p>The University of Michigan offers a variety of programs and services to support first-generation students, such as:</p>
+                <ul>
+                    <li><strong>Comprehensive Studies Program (CSP):</strong> Provides academic support through courses, holistic advising, and co-curricular programming.</li>
+                    <li><strong>Multi-Ethnic Student Affairs (MESA):</strong> Offers support and programming through celebrations, educational offerings, and building social capital through the lens of race and ethnicity.</li>
+                    <li><strong>Office of New Student Programs (ONSP):</strong> Engages students through orientation, mentorship, and welcome programs.</li>
+                </ul>
+                <p>For a comprehensive list of programs, visit the <a href="https://firstgen.umich.edu/programs/">Programs</a> page.</p>
+            </article>
+        </section>
+
+        <section>
+            <h2>Contact Information</h2>
+            <address>
+                <p>First-Generation Student Gateway<br>
+                3009 Student Activities Building<br>
+                515 E. Jefferson St.<br>
+                Ann Arbor, MI 48109</p>
+                <p>Email: <a href="mailto:firstgen-gateway@umich.edu">firstgen-gateway@umich.edu</a></p>
+                <p>Phone: (734) 936-1055</p>
+            </address>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> University of Michigan School of Information</p>
+    </footer>
+
+    <script>
+        const body = document.body;
+        const toggleButton = document.querySelector(".dark-toggle");
+        const yearSpan = document.getElementById("year");
+    
+        function updateButtonText() {
+            toggleButton.textContent = body.classList.contains("dark-mode")
+                ? "Toggle to Light Mode"
+                : "Toggle to Dark Mode";
+        }
+    
+        if (localStorage.getItem("darkMode") === "enabled") {
+            body.classList.add("dark-mode");
+        }
+    
+        updateButtonText();
+    
+        function toggleDarkMode() {
+            body.classList.toggle("dark-mode");
+            const mode = body.classList.contains("dark-mode") ? "enabled" : "disabled";
+            localStorage.setItem("darkMode", mode);
+            updateButtonText();
+        }
+    
+        yearSpan.textContent = new Date().getFullYear();
+    </script>
+    
+    
+</body>
+</html>
